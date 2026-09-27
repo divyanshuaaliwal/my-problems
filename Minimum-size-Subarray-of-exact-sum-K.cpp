@@ -25,7 +25,7 @@ int minSubArrayLen(int target, vector<int>& nums) {
             i += 1;
         } 
 
-        j += 1;                                    // lesser than
+        j += 1;
     }
     
     return minLen == INT_MAX ? -1 : minLen;
