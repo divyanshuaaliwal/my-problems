@@ -4,28 +4,28 @@ using namespace std;
 // Your original function with -1 for no subarray
 int minSubArrayLen(int target, vector<int>& nums) {
 
-    int n = nums.size();
-    int i = 0;
-    int j = 0;
-    int sum = 0;
-    int minLen = INT_MAX;
+        int i = 0;
+        int j = 0;
+        int n = nums.size();
+        int minLen = INT_MAX;
+        int currSum = 0;
 
     while(j < n) {
 
-        sum += nums[j];
+        currSum += nums[j];
 
-        while (i <= j && sum > target) {  
-            sum -= nums[i];
+        while(i <= j && currSum > target) {        // greater than
+            currSum -= nums[i];
             i += 1;
-        }
+        } 
 
-        while (i <= j && sum == target) {  
+        while(i <= j && currSum == target) {        // equal to
             minLen = min(minLen, j - i + 1);
-            sum -= nums[i];
+            currSum -= nums[i];
             i += 1;
-        }
+        } 
 
-        j += 1;
+        j += 1;                                    // lesser than
     }
     
     return minLen == INT_MAX ? -1 : minLen;
