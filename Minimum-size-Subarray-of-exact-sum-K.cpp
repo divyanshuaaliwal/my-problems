@@ -19,7 +19,7 @@ int minSubArrayLen(int target, vector<int>& nums) {
             i += 1;
         } 
 
-        while(i <= j && currSum == target) {        // equal to
+        while(i <= j && currSum == target) {        // equals to
             minLen = min(minLen, j - i + 1);
             currSum -= nums[i];
             i += 1;
