@@ -4,11 +4,11 @@ using namespace std;
 // Your original function with -1 for no subarray
 int minSubArrayLen(int target, vector<int>& nums) {
 
-        int i = 0;
-        int j = 0;
-        int n = nums.size();
-        int minLen = INT_MAX;
-        int currSum = 0;
+    int i = 0;
+    int j = 0;
+    int n = nums.size();
+    int minLen = INT_MAX;
+    int currSum = 0;
 
     while(j < n) {
 
